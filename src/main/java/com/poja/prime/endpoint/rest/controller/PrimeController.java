@@ -31,11 +31,11 @@ public class PrimeController {
         List<BigInteger> tenPrime = new ArrayList<BigInteger>();
         if(reviews.size() >= 10){;
              for (int i = 9; i >= 0; i--) {
-                 tenPrime.add(reviews.get(i));
+                 System.out.println(reviews.get(i));
              }
         } else {
             for(int i = reviews.size(); i > 0; i-- ){
-                tenPrime.add(reviews.get(i - 1));
+                System.out.println(reviews.get(i-1));
             }
         }
         return tenPrime;
