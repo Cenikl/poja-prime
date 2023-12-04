@@ -13,6 +13,12 @@ import java.util.Random;
 public class PrimeController {
     @GetMapping("/new-prime")
     public BigInteger generatePrime() {
-        return BigInteger.probablePrime(10000,new Random());
+        Random random = new Random();
+        double desiredCertainty = Math.ceil(Math.log(1 - 0.9999) / Math.log(2));
+        BigInteger probablePrime;
+        do {
+            probablePrime = new BigInteger(10000,random);
+        } while (!probablePrime.isProbablePrime((int) desiredCertainty));
+        return probablePrime;
     }
 }
