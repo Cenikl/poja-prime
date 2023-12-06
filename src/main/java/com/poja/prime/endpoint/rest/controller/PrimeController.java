@@ -21,14 +21,14 @@ public class PrimeController {
         BigInteger probablePrime;
         do {
             probablePrime = new BigInteger(1000,random);
-        } while (!probablePrime.isProbablePrime(15));
+        } while (probablePrime.isProbablePrime(15));
         reviews.add(0,probablePrime);
         return probablePrime;
     }
     @GetMapping("/generated-primes")
     public List<BigInteger> generatePrimes() {
         List<BigInteger> tenPrime = new ArrayList<BigInteger>();
-        if(reviews.size() >= 10){;
+        if(reviews.size() >= 10){
              for (int i = 9; i >= 0; i--) {
                  tenPrime.add(reviews.get(i));
              }
