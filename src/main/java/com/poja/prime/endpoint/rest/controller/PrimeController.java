@@ -18,11 +18,7 @@ public class PrimeController {
     @GetMapping("/new-prime")
     public BigInteger generatePrime() {
         Random random = new Random();
-        BigInteger probablePrime;
-        do {
-            probablePrime = new BigInteger(1000,random);
-        } while (probablePrime.isProbablePrime(15));
-        reviews.add(0,probablePrime);
+        BigInteger probablePrime = new BigInteger(1000,15,random);
         return probablePrime;
     }
     @GetMapping("/generated-primes")
